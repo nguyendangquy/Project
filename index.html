@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhạc cá nhân | Xem bài hát, Album, MV đang hot nhất hiện tại</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> <!-- reset css -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- icon -->
+    <link rel="icon" type="image/png" href="https://static-zmp3.zadn.vn/skins/zmp3-v5.2/images/icon_zing_mp3_60.png" /> <!-- icon title -->
+    <link rel="stylesheet" href="assets/icons/themify-icons/themify-icons.css"> <!-- icon file -->
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+</head>
+<body>
+    <div class="app">
+         <!-- App left -->
+        <div class="app-left">
+            <div class="logo">              
+            </div>
+            <!-- Navbar -->
+            <div class="navbar">
+                <div class="navbar-top">
+                    <div class="navbar-top_item active">
+                        <i class="ti-id-badge"></i>
+                        <p>Cá Nhân</p>
+                    </div>
+                    <div class="navbar-top_item">
+                        <i class="ti-world"></i>
+                        <p>Khám Phá</p>
+                    </div>
+                    <div class="navbar-top_item">
+                        <i class="ti-rss-alt"></i>
+                        <p>zingchart</p>
+                    </div>
+                    <div class="navbar-top_item">
+                        <i class="ti-headphone"></i>
+                        <p>Radio</p>
+                    </div>
+                    <div class="navbar-top_item">
+                        <i class="ti-user"></i>
+                        <p>Theo Dõi</p>
+                    </div>
+
+                    <div id="line"></div>
+                    <div class="navbar-top_item">
+                        <i class="ti-music-alt"></i>
+                        <p>Nhạc Mới</p>
+                    </div>
+                    <div class="navbar-top_item">
+                        <i class="ti-layout-grid2"></i>
+                        <p>Thể Loại</p>
+                    </div>
+                    <div class="navbar-top_item">
+                        <i class="ti-star"></i>
+                        <p>Top 100</p>
+                    </div>
+                    <div class="navbar-top_item">
+                        <i class="ti-youtube"></i>
+                        <p>MV</p>
+                    </div>
+                </div>
+                <div class="navbar-top_vip">
+                    <div class="navbar-top_vip-text">
+                        <p>Nghe nhạc không quảng cáo cùng kho nhạc VIP</p>
+                    </div>
+                    <button type="button" class="navbar-top_vip-btn">MUA VIP</button>
+                </div>
+                <!-- PlayList -->
+                <div class="playlists">
+                    <i class="ti-plus"></i>
+                    <p>Tạo playlist mới</p>
+                </div>
+            </div>
+        </div>
+        <!-- App right -->
+        <div class="app-right">
+            <div class="app-rgiht-top">
+                <div class="app-right-top_header">
+                    <div class="header-left">
+                        <div class="icon-arow">
+                            <i class="ti-arrow-right"></i>
+                            <i class="ti-arrow-left"></i>
+                        </div>
+                        <div class="search">
+                            <i class="ti-search"></i>
+                            <input type="text" class="btn-search"placeholder="Nhập tên bài hát, nghệ sĩ hoặc MV...">
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <div class="icon-box">
+                            <i class="ti-face-smile"></i>
+                        </div>
+                        <div class="icon-box">
+                            <i class="ti-upload"></i>
+                        </div>
+                        <div class="icon-box">
+                            <i class="ti-settings"></i>
+                        </div>
+                         <div class="icon-box">
+                            <img src="assets/img/dangquy.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="app-right-top_content">
+                    <div class="content-user">
+                        <div class="user-info">
+                            <div class="user-avatar">
+                                <img src="assets/img/dangquy.jpg" alt="">
+                            </div>
+                            <p>Nguyễn Đăng Quý</p>
+                        </div>
+
+                    </div>
+                    <div class="content-vip">
+                        <button type="button" class="buy-vip bonus">MUA VIP NGAY</button>
+                        <button type="button" class="buy-vip">NHẬP CODE VIP</button>
+                        <div class="icon-vip">
+                            <i class="fa fa-ellipsis-h"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <!-- Nabar user profile  -->    
+            <nav class="navbar-user-profile">
+                <div class="navbar-container">
+                        <ul class="navbar-menu">
+                            <li class="navbar-item active"><a href="#">TỔNG QUAN</a></li>
+                            <li class="navbar-item"><a href="#">BÀI HÁT</a></li>
+                            <li class="navbar-item"><a href="#">PLAYTIST</a></li>
+                            <li class="navbar-item"><a href="#">NGHỆ SĨ</a></li>
+                            <li class="navbar-item on-pc"><a href="#">ALBUM</a></li>
+                            <li class="navbar-item on-pc"><a href="#">MV</a></li>
+                            <li class="navbar-item on-pc"><a href="#">TẢI LÊN</a></li>  
+                        </ul>
+                    </div>
+            </nav>
+            <!-- App right bottom > List music-->
+            <div class="app-right-bottom">
+                <div class="mymusic-section active">
+                    <div class="music-header">
+                        <h3 class="header-title">
+                            <a href="#">Bài Hát
+                                <i class="ti-angle-right"></i>
+                            </a>                
+                        </h3>
+                        <div class="header-btn">
+                            <button class="btn-upload">
+                                <i class="fa fa-upload" style="margin-right: 6px;"></i>
+                                TẢI LÊN
+                            </button>
+                            <button class="btn-playall">
+                                <i class="fa fa-caret-right" style="font-size: 22px; margin-right: 6px;"></i>
+                                PHÁT TẤT CẢ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="music-content">
+                        <div class="image-music">
+                            <img src="assets/img/imagemusic.jpg" alt="">                           
+                        </div>
+                        <!-- List Music -->
+                        <div class="list-music">
+                            <div class="song-list">
+                               <!-- playlist -->                                                                                     
+                            </div>                         
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab UI -->
+                <div class="mymusic-section">
+                    <div class="music-header">
+                        <h3 class="header-title">
+                            <a href="#">Bài Hát
+                            </a>                
+                        </h3>
+                        <div class="header-btn">
+                            <button class="btn-upload">
+                                <i class="fa fa-upload" style="margin-right: 6px;"></i>
+                                TẢI LÊN
+                            </button>
+                            <button class="btn-playall">
+                                <i class="fa fa-caret-right" style="font-size: 22px; margin-right: 6px;"></i>
+                                PHÁT TẤT CẢ
+                            </button>
+                        </div>
+                    </div>
+                    <div class="music-content">
+                        <!-- List Music -->
+                        <div class="list-music2">
+                            <div class="song-list2">
+                                    <!-- playlist -->                                                                             
+                            </div>                         
+                        </div>
+                    </div>
+                </div>
+                <div class="mymusic-section">
+                    <h3 class="header-title" style="margin-left: 10px;">
+                        <a href="#">Playlist    
+                        </a>                
+                    </h3>
+                    <div class="playlist-column">
+                       <div class="playlist-item">
+                           <div class="create-playlist">
+                               <i class="ti-plus"></i>
+                               <span>Tạo playlist mới</span>
+                           </div>
+                       </div>
+                       <div class="playlist-item">
+                           <div class="playlist-item-content">
+                               <div class="item-img">
+                                    <img src="assets/img/song12.jpg" alt="">
+                               </div>
+                               <div class="item-info">
+                                  <!--  <a href="info-name">Playlist</a>
+                                   <h3>Nguyễn Đăng Quý</h3> -->
+                               </div>
+                           </div>
+                       </div>
+                       <div class="playlist-item">
+                        <div class="playlist-item-content">
+                            <div class="item-img">
+                                 <img src="assets/img/song8.jpg" alt="">
+                            </div>
+                            <div class="item-info">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <div class="playlist-item-content">
+                            <div class="item-img">
+                                 <img src="assets/img/song15.jpg" alt="">
+                            </div>
+                            <div class="item-info">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist-item">
+                        <div class="playlist-item-content">
+                            <div class="item-img">
+                                 <img src="assets/img/song17.jpg" alt="">
+                            </div>
+                            <div class="item-info">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                </div>
+                <div class="mymusic-section">
+                    <div class="tablist-content">
+                        <i class="ti-microphone"></i>
+                        <span>Không có Nghệ sĩ trong thư viện nhạc cá nhân</span>
+                    </div>
+                </div>
+                <div class="mymusic-section">
+                    <div class="tablist-content">
+                        <i class="ti-save-alt"></i>
+                        <span>Không có Album trong thư viện nhạc cá nhân</span>
+                    </div>
+                </div>
+                <div class="mymusic-section">
+                    <div class="tablist-content">
+                        <i class="ti-video-clapper"></i>
+                        <span>Không có MV trong thư viện cá nhân</span>
+                    </div>
+                </div>
+                <div class="mymusic-section">
+                    <div class="tablist-content">
+                        <i class="ti-music-alt"></i>
+                        <span>Không có bài hát tải lên</span>
+                    </div>
+                </div>
+               
+            </div> 
+        </div>
+        <!-- App Bottom -->
+        <div class="app-bottom">
+            <div class="player-control">
+                <div class="player-control-left">
+                    <div class="control-left-list">
+                        <div class="music-img" style="background-image:url('assets/img/song1.jpg')">
+                        </div>
+                        <div class="music-textname">
+                            <h3 class="title">Anh lại một mình</h3>
+                            <p class="author">Keyo</p>
+                        </div>
+                        <div class="music-icon">
+                            <i class="ti-heart"></i>
+                            <i class="ti-more-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-control-center">
+                    <div class="control-btn">
+                        <div class="btn-random">
+                            <i class="ti-control-shuffle"></i>
+                        </div>
+                        <div class="btn-prev">
+                            <i class="ti-control-skip-backward"></i>
+                        </div>
+                        <div class="btn-toggle-play">
+                            <i class="fa fa-pause"></i>
+                            <i class="fa fa-play"></i>
+                        </div>
+                        <div class="btn-next">
+                            <i class="ti-control-skip-forward"></i>
+                        </div>
+                        <div class="btn-repeat">
+                            <i class="ti-loop "></i>
+                        </div>
+                    </div>
+                    <input id="progress" class="progress" type="range" value="0" step="1" min="0" max="100">
+                    <audio id="audio" src=""></audio>
+                </div>
+                <div class="player-control-right">
+                    <div class="item-icon">
+                        <i class="ti-youtube"></i>
+                    </div>
+                    <div class="item-icon">
+                        <i class="ti-microphone-alt"></i>
+                    </div>
+                    <div class="item-icon">
+                        <i class="ti-bookmark-alt"></i>
+                    </div>
+                    <div class="item-icon volums">
+                        <div class="item-volum">
+                            <i class="fa fa-volume-up"></i>
+                        </div>
+                        <input id="volum" class="volum" type="range" value="100" step="1" min="0" max="100">
+                    </div>
+                    <div class="lineh"></div>
+                    <div class="item-icon">
+                        <i class="ti-layout-grid2-thumb"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="assets/js/app.js"></script>
+</html>
