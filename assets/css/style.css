@@ -276,7 +276,6 @@ a {
     background-color: #282331;
     padding: 4px;
     border-radius: 15px;
-    width: 60%;
     justify-content: space-around;
 }
 .navbar-item {
@@ -302,7 +301,7 @@ a {
     margin-top: 30px;
 }
 .mymusic-section {
-    max-width: 1170px;
+    padding: 0 60px;
     margin: 0 auto;
     display: none;
 }
@@ -336,7 +335,7 @@ a {
 .playlist-item {
     margin: 0 10px;
     width: 20%;
-    height: 257px;
+    height: 220px;
     cursor: pointer;
 }
 
@@ -514,7 +513,7 @@ a {
 }
 .playlist-left {
     display: flex;
-    width: 40%;
+    width: 50%;
 }
 .playlist-info {
     display: flex;
@@ -529,18 +528,19 @@ a {
     
 }
 .playlist-name {
-    margin-left: 10px;
     color: white;
 }
 .playlist-name .author {
-    font-size: 14px;
+    font-size: 13px;
     color: #696372;
+}
+.playlist-content {
+    flex: 1 1;
 }
 .song-time {
     font-size: 14px;
     color: #696372;
     position: relative;
-    right: 50px;
 }
 .playlist-right {
     margin-right: 12px;

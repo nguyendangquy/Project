@@ -17,6 +17,7 @@ const prevBtn = $('.btn-prev')
 const nextBtn = $('.btn-next')
 const repeatBtn = $('.btn-repeat')
 const randomBtn = $('.btn-random')
+const btnplayAll = $('.btn-playall')
 
 tabNav.forEach(function(tab, index) {
     var mymusic = mymuicSection[index]
@@ -32,7 +33,7 @@ tabNav.forEach(function(tab, index) {
 })
 
 const app = {
-    currentIndex: 0, // lấy ra chỉ mục đầu tiên của mảng
+    currentIndex: 0, 
     isPlaying: false,
     isRandom: false,
     isRepeat: false,
@@ -159,7 +160,7 @@ const app = {
         },
         {
             name:'Dạ Vũ',
-            singer: 'Tăng Duy Tân x Phong Max',
+            singer: 'Tăng Duy Tân',
             path: './assets/ListMusic/song21.mp3',
             image: './assets/img/song21.jpg'
         },
@@ -181,7 +182,7 @@ const app = {
                         <div class="playlist-thumb" style="background-image: url('${song.image}')">
                         </div>
                         <div class="playlist-name">
-                                <h3 class="title">${song.name}</h3>
+                                <h4 class="title">${song.name}</h4>
                                 <p class="author">${song.singer}</p>
                         </div>
                     </div>                                     
@@ -233,6 +234,14 @@ const app = {
                 player.classList.add('playing')
                 cdThumAnimate.play()
             }
+
+        }
+        btnplayAll.onclick = function() {
+            
+            _this.isPlaying = false
+            audio.play()
+            player.classList.add('playing')
+            cdThumAnimate.play()
 
         }
         //Lắng nghe hành vi click vào songList
@@ -342,13 +351,10 @@ const app = {
         this.loadCurrentSong()
     },
     start:function() {
-        //Định nghĩa các thuộc tính cho object
         this.defineProperies()
-        //Lắng nghe xử lý các sự kiện
         this.handleEvents()
         //Tải thông tin bài hát đầu tiên vào UI khi chạy ứng dụng
         this.loadCurrentSong()
-        //render lại songlist
         this.render()
     }
 
