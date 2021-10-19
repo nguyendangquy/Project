@@ -9,7 +9,7 @@ const songList2 = $('.song-list2')
 const playBtn = $('.btn-toggle-play')
 const audio = $('#audio')
 const mymuicSection = $$('.mymusic-section')
-const heading = $('.music-textname h3')
+const heading = $('.music-textname h4')
 const sub = $('.music-textname p')
 const cdThumb = $('.music-img')
 const progress = $('.progress')
@@ -42,7 +42,8 @@ const app = {
             name:'Tiếng hét nghĩa tình',
             singer: 'Đăng Quý',
             path: './assets/ListMusic/song1.mp3',
-            image: './assets/img/song1.jpg'
+            image: './assets/img/song1.jpg',
+            time:'5.02'
         },
         {
             name:'Nhớ lời cha mẹ dặn',
@@ -69,7 +70,7 @@ const app = {
             image: './assets/img/song5.jpg'
         },
         {
-            name:'Em xứng đáng bình yên',
+            name:'Em xứng bình yên',
             singer: 'Xuân Đức',
             path: './assets/ListMusic/song6.mp3',
             image: './assets/img/song6.jpg'
@@ -106,12 +107,12 @@ const app = {
         },
         {
             name:'Cứ ngỡ(Edm remix)',
-            singer: 'NB3 Hoài Bảo, Hoàng Ly',
+            singer: 'NB3 Hoài Bảo',
             path: './assets/ListMusic/song12.mp3',
             image: './assets/img/song12.jpg'
         },
         {
-            name:'Có duyên không nợ remix',
+            name:'Có duyên không nợ ',
             singer: 'NB3 Hoài Bảo',
             path: './assets/ListMusic/song13.mp3',
             image: './assets/img/song13.jpg'
@@ -123,7 +124,7 @@ const app = {
             image: './assets/img/song14.jpg'
         },
         {
-            name:'Yêu đừng sợ đau remix',
+            name:'Yêu đừng sợ đau',
             singer: 'Ngô Lan Hương',
             path: './assets/ListMusic/song15.mp3',
             image: './assets/img/song15.jpg'
@@ -147,7 +148,7 @@ const app = {
             image: './assets/img/song18.jpg'
         },
         {
-            name:'Đừng bắt anh mạnh mẽ',
+            name:'Đổi thay',
             singer: 'Hồ Quang Hiếu',
             path: './assets/ListMusic/song19.mp3',
             image: './assets/img/song19.jpg'
@@ -165,7 +166,7 @@ const app = {
             image: './assets/img/song21.jpg'
         },
         {
-            name:'Chưa bao giờ em quên',
+            name:'Chưa bao giờ quên',
             singer: 'Hương Ly',
             path: './assets/ListMusic/song22.mp3',
             image: './assets/img/song22.jpg'
@@ -189,7 +190,7 @@ const app = {
                 </div>
                 <div class="playlist-content">
                     <div class="song-time">
-                            05:22
+                        05:02
                     </div>
                 </div>
                 <div class="playlist-right">
@@ -223,39 +224,54 @@ const app = {
          //Xử lý khi click nút play
         playBtn.onclick = function() {
             if(_this.isPlaying) {
-                _this.isPlaying = false
                 audio.pause()
-                player.classList.remove('playing')
-                cdThumAnimate.pause()
             } 
             else {
-                _this.isPlaying = true
                 audio.play()
-                player.classList.add('playing')
-                cdThumAnimate.play()
             }
-
         }
-        btnplayAll.onclick = function() {
-            
+        audio.onplay = function() {
+            _this.isPlaying = true
+            player.classList.add('playing')
+            cdThumAnimate.play()
+        }
+        audio.onpause = function() {
             _this.isPlaying = false
+            player.classList.remove('playing')
+            cdThumAnimate.pause()
+        }
+        // Xử lý click vào phát tất cả
+        btnplayAll.onclick = function() {
+            _this.currentIndex = 0
+            const songActives = $$(`.playlist[data-index="${_this.currentIndex}"]`)
+            _this.loadCurrentSong()
+            Array.from($$('.playlist.active')).forEach(songActive => {
+                songActive.classList.remove('active');
+            })
+            Array.from(songActives).forEach(player => {
+                player.classList.add('active')
+            })
+            _this.loadCurrentSong()
             audio.play()
             player.classList.add('playing')
             cdThumAnimate.play()
-
         }
         //Lắng nghe hành vi click vào songList
         songList.onclick = function(e) {
             //console.log(e.target)
             const songNode = e.target.closest('.playlist:not(.active)')
-            if(songNode) {
-                _this.currentIndex = Number(songNode.dataset.index)
-                _this.loadCurrentSong()
-                _this.render()
-                audio.play()
-                player.classList.add('playing')
-                cdThumAnimate.play()
-
+            if(songNode || e.target.closest('.playlist-right'))
+            {
+                if(songNode) {
+                    _this.currentIndex = Number(songNode.dataset.index)
+                    _this.loadCurrentSong()
+                    _this.render()
+                    audio.play()
+                    cdThumAnimate.play()
+                }
+                if(e.target.closest('.playlist-right')) {
+                    
+                }
             }
         }
         songList2.onclick = function(e) {
@@ -267,7 +283,6 @@ const app = {
                 audio.play()
                 player.classList.add('playing')
                 cdThumAnimate.play()
-
             }
         }
         //Khi tiến độ bài hát thay đổi : ontimeupdate
@@ -325,6 +340,7 @@ const app = {
     loadCurrentSong: function() {
         //console.log(heading, sub,cdThumb)
         heading.textContent = this.currentSong.name
+        sub.textContent = this.currentSong.singer
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`
         audio.src = this.currentSong.path
     },
