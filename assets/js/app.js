@@ -171,7 +171,60 @@ const app = {
             path: './assets/ListMusic/song22.mp3',
             image: './assets/img/song22.jpg'
         },
-        
+        {
+            name:'Nếu em không hạnh phúc',
+            singer: 'Long Hải',
+            path: './assets/ListMusic/song23.mp3',
+            image: './assets/img/song23.jpg'
+        },
+        {
+            name:'Đành lòng sao',
+            singer: 'Anh Rồng',
+            path: './assets/ListMusic/song24.mp3',
+            image: './assets/img/song24.jpg'
+        },
+        {
+            name:'Thê Tử',
+            singer: 'Minh Vương',
+            path: './assets/ListMusic/song25.mp3',
+            image: './assets/img/song25.jpg'
+        },
+        {
+            name:'Ái nộ',
+            singer: 'Masew',
+            path: './assets/ListMusic/song26.mp3',
+            image: './assets/img/song26.jpg'
+        },
+        {
+            name:'Câu hứa chưa vẹn tròn',
+            singer: 'Phát Huy',
+            path: './assets/ListMusic/song27.mp3',
+            image: './assets/img/song27.jpg'
+        },
+        {
+            name:'Lựa chọn của anh',
+            singer: 'Như Việt',
+            path: './assets/ListMusic/song28.mp3',
+            image: './assets/img/song28.jpg'
+        },
+        {
+            name:'Tiếng tơ lòng',
+            singer: 'H-Kray, Truzg',
+            path: './assets/ListMusic/song29.mp3',
+            image: './assets/img/song29.jpg'
+        },
+        {
+            name:'Khó đoán',
+            singer: 'Phạm Trưởng',
+            path: './assets/ListMusic/song30.mp3',
+            image: './assets/img/song30.jpg'
+        },
+        {
+            name:'Cưới luôn được không',
+            singer: 'YuniBoo',
+            path: './assets/ListMusic/song31.mp3',
+            image: './assets/img/song31.jpg'
+        },
     ],
 
     render: function() {
@@ -234,7 +287,7 @@ const app = {
             _this.isPlaying = true
             player.classList.add('playing')
             cdThumAnimate.play()
-        }
+        } 
         audio.onpause = function() {
             _this.isPlaying = false
             player.classList.remove('playing')
@@ -315,7 +368,7 @@ const app = {
                 _this.prevSong()
             }
             audio.play()
-            _this.render()
+            _this.render()   
         }
         //xử lý bật / tắt random
         randomBtn.onclick = function(e) {
@@ -376,5 +429,4 @@ const app = {
 
 }
 app.start()
-
 
